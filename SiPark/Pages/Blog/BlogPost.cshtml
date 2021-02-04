@@ -1,4 +1,8 @@
-﻿@page
+﻿@page "{id}"
+@{ 
+    var id = 0;
+    bool b = int.TryParse((string)RouteData.Values["id"], out id);
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog Post</title>
+  <title>Blog Post - @id</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +85,7 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Post Title
+    <h1 class="mt-4 mb-3">Post - @id
       <small>by
         <a href="#">Start Bootstrap</a>
       </small>
